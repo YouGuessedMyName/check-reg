@@ -36,4 +36,5 @@ python check-reg.py -f regex
 ### Comparison of regular expressions
 
 ```cmd
-python check-reg.py -e regex1 regex2```
+python check-reg.py -e regex1 regex2
+```
