@@ -14,7 +14,7 @@ GITHUB_LINK = ""
 # https://sulzmann.blogspot.com/2008/11/playing-with-regular-expressions.html
 
 # Run-time: O(|ALPHABET|^(SEARCH_LENGTH))
-SEARCH_LENGTH = 16 # The maximum word length that should be compared
+SEARCH_LENGTH = 13 # The maximum word length that should be compared
 ALPHABET = "ab" # Only use letters in the alphabet please
 
 def main():
@@ -43,18 +43,18 @@ def match(regex, word):
 
 def find(regex):
     pr = to_python_regex(regex)
-    for word in gen_words(ALPHABET, SEARCH_LENGTH):
+    for word in gen_words(ALPHABET, SEARCH_LENGTH-1):
         if re.fullmatch(pr, word):
             if word == "":
                 word = "lambda"
             print(f"Word found: '{word}'")
             return
-    print(f"Empty language for w where |w| <= {SEARCH_LENGTH-1}")
+    print(f"Empty language for w where |w| <= {SEARCH_LENGTH}")
     
 def equal(regex1, regex2):
     pr1 = to_python_regex(regex1)
     pr2 = to_python_regex(regex2)
-    for word in gen_words(ALPHABET, SEARCH_LENGTH):
+    for word in gen_words(ALPHABET, SEARCH_LENGTH-1):
         m1 = re.fullmatch(pr1, word)
         m2 = re.fullmatch(pr2, word)
         if bool(m1) != bool(m2):
@@ -66,7 +66,7 @@ def equal(regex1, regex2):
             else:
                 print(f"'{word}' is not in\t{regex1}\n'{word}' is in {regex2}")
             return
-    print(f"{regex1} = {regex2} for w where |w| <= {SEARCH_LENGTH-1}")
+    print(f"{regex1} = {regex2} for w where |w| <= {SEARCH_LENGTH}")
 
 def gen_words(alphabet, size=None):
     """ADAPTED FROM gen_words by user Kevin on stackoverflow.
