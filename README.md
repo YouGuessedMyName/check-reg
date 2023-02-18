@@ -24,12 +24,14 @@ It also supports * (Arbitrary number of repetitions) and nested expressions with
 ### Checking if a word is in a language described by a regular expression
 
 ```cmd
-python check-reg.py -m regex word```
+python check-reg.py -m regex word
+```
 
 ### Finding some word in a language described by a regular expression
 
 ```cmd
-python check-reg.py -f regex```
+python check-reg.py -f regex
+```
 
 ### Comparison of regular expressions
 
