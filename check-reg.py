@@ -14,7 +14,7 @@ GITHUB_LINK = ""
 # https://sulzmann.blogspot.com/2008/11/playing-with-regular-expressions.html
 
 # Run-time: O(|ALPHABET|^(SEARCH_LENGTH))
-SEARCH_LENGTH = 13 # The maximum word length that should be compared
+SEARCH_LENGTH = 10 # The maximum word length that should be compared
 ALPHABET = "ab" # Only use letters in the alphabet please
 
 def main():
