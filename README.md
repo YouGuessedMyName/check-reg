@@ -6,7 +6,7 @@ Check-reg is a simple command-line application written in python. Its main featu
 
 - Checking if a word is in a language described by a regular expression
 - Finding some word in a language described by a regular expression
-- Comparison of regular expressions
+- Equality of regular expressions up to a certain word length
 
 ## Aproach
 
@@ -21,6 +21,10 @@ It also supports * (Arbitrary number of repetitions) and nested expressions with
 
 ## Usage
 
+There is a constant SEARCH_LENGTH which determines what the maximum word length should be that the program tests on.
+The constant ALPHABET consists of all letters in the alphabet.
+If you want to change these parameters, do so in the python file.
+
 ### Checking if a word is in a language described by a regular expression
 
 ```cmd
@@ -33,7 +37,7 @@ python check-reg.py -m regex word
 python check-reg.py -f n regex
 ```
 
-### Comparison of regular expressions
+### Equality of regular expressions up to a certain word length
 
 ```cmd
 python check-reg.py -e regex1 regex2
