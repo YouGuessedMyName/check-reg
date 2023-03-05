@@ -29,27 +29,35 @@ def main():
         match(sys.argv[2], sys.argv[3])
     # -f regex
     if sys.argv[1] == "-f" or sys.argv[1] == "--find":
-        find(sys.argv[2])
+        find(int(sys.argv[2]), sys.argv[3])
         
     # -e regex1 regex2
     elif sys.argv[1] == "-e" or sys.argv[1] == "--match":
         equal(sys.argv[2], sys.argv[3])
-        
+    
 def match(regex, word):
     if re.fullmatch(regex, word):
         print("Word is in the language")
     else:
         print("Word is not in the language")
 
-def find(regex):
+def find(n: int, regex):
+    if n == 0:
+        return
+    res = [] # Use a list because we want to print in order of word length.
     pr = to_python_regex(regex)
     for word in gen_words(ALPHABET, SEARCH_LENGTH-1):
         if re.fullmatch(pr, word):
+            n -= 1
             if word == "":
                 word = "lambda"
-            print(f"Word found: '{word}'")
-            return
-    print(f"Empty language for w where |w| <= {SEARCH_LENGTH}")
+            res.append(word)
+            if n <= 0:
+                break
+    if len(res) == 0:
+        print(f"Empty language for w where |w| <= {SEARCH_LENGTH}")
+    else:
+        print(f"Words found: '{res}'")
     
 def equal(regex1, regex2):
     pr1 = to_python_regex(regex1)
@@ -68,7 +76,7 @@ def equal(regex1, regex2):
             return
     print(f"{regex1} = {regex2} for w where |w| <= {SEARCH_LENGTH}")
 
-def gen_words(alphabet, size=None):
+def gen_words(alphabet, size=None, recursive=True):
     """ADAPTED FROM gen_words by user Kevin on stackoverflow.
        https://stackoverflow.com/questions/55694495/how-do-i-iterate-over-all-words-up-to-permutations-of-the-alphabet-in-python
 
@@ -90,7 +98,9 @@ def gen_words(alphabet, size=None):
         yield ""
     else:
         for s in gen_words(alphabet, size-1):
-            yield s
+            if recursive:
+                yield s
+                recursive = False
             # For every word in all permutations of n-1, try adding all characters in alphabet to it.
             for c in alphabet:
                 yield s + c

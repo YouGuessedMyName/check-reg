@@ -27,10 +27,10 @@ It also supports * (Arbitrary number of repetitions) and nested expressions with
 python check-reg.py -m regex word
 ```
 
-### Finding some word in a language described by a regular expression
+### Finding n words in a language described by a regular expression where n is a natural number
 
 ```cmd
-python check-reg.py -f regex
+python check-reg.py -f n regex
 ```
 
 ### Comparison of regular expressions
