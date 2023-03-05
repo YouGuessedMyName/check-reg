@@ -57,7 +57,8 @@ def find(n: int, regex):
     if len(res) == 0:
         print(f"Empty language for w where |w| <= {SEARCH_LENGTH}")
     else:
-        print(f"Words found: '{res}'")
+        print(f"Words found:")
+        print(*res, sep=', ')
     
 def equal(regex1, regex2):
     pr1 = to_python_regex(regex1)
