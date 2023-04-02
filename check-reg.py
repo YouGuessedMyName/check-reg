@@ -2,7 +2,7 @@ import re
 import sys
 
 # Regular expression checker
-# Written by YouGuessedMyName 18-02-2023
+# Written by Ivo Melse / YouGuessedMyName 02-04-2023 (European date format)
 # Link to GitHub repo:
 GITHUB_LINK = "https://github.com/YouGuessedMyName/check-reg/blob/main/README.md"
 # More information in the readme.md file
