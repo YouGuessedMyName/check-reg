@@ -4,7 +4,7 @@ import sys
 # Regular expression checker
 # Written by YouGuessedMyName 18-02-2023
 # Link to GitHub repo:
-GITHUB_LINK = ""
+GITHUB_LINK = "https://github.com/YouGuessedMyName/check-reg/blob/main/README.md"
 # More information in the readme.md file
 
 # Contains adapted code from gen_words by Stack Overflow user Kevin 
