@@ -107,7 +107,7 @@ def gen_words(alphabet, size=None, recursive=True):
                 yield s + c
 
 def to_python_regex(s):
-    # 1 is removed by the input string, regex will interpret "1" as "", "1a" as "a", and "1+a+b" as "+a+b"
+    # 1 is removed from the input string, regex will interpret "1" as "", "1a" as "a", and "1+a+b" as "+a+b"
     return s.replace("+", "|").replace("1", "")
 
 if __name__ == "__main__":
