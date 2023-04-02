@@ -2,7 +2,8 @@
 
 ## What is check-reg
 
-Check-reg is a simple command-line application written in python. Its main features are:
+Check-reg is a simple command-line application written in python. Unlike most similar applications, it uses academic syntax for regular expressions. (See syntax)
+Its main features are:
 
 - Checking if a word is in a language described by a regular expression
 - Finding some word in a language described by a regular expression
@@ -18,6 +19,7 @@ These parameters can be edited at the top of the python file.
 
 Check-reg uses + instead of | for disjunctions.
 It also supports * (Arbitrary number of repetitions) and nested expressions with parenthesis.
+1 is a special character that denotes the empty word.
 
 ## Usage
 
