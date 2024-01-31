@@ -36,7 +36,7 @@ def main():
         equal(sys.argv[2], sys.argv[3])
     
 def match(regex, word):
-    if re.fullmatch(regex, word):
+    if re.fullmatch(to_python_regex(regex), word):
         print("Word is in the language")
     else:
         print("Word is not in the language")
